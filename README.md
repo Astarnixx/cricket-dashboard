@@ -55,15 +55,10 @@ src/
 ## Deployment
 
 Deployed on Vercel: https://cricket-dashboard-sigma.vercel.app/
-
-<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/ef76fb0c-3dee-4d9e-825f-a32296c3a118" />
-<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/9ae9a241-e41f-437b-a2d9-fc8ead97f7e5" />
-<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/315cabb9-48be-4ab8-acb3-a77e214d90a1" />
-<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/af406faa-7315-4952-adf0-7006122a56d4" />
-<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/b8200c52-e341-421d-b968-d8b93c275d36" />
-
-
-
-
+<img width="1130" height="615" alt="Screenshot 2025-09-06 at 9 57 03 PM" src="https://github.com/user-attachments/assets/85315397-f3a1-4df0-bdbc-42cf755ce8b5" />
+<img width="1130" height="615" alt="Screenshot 2025-09-06 at 9 58 16 PM" src="https://github.com/user-attachments/assets/287598e6-61ad-4ee3-86d0-1c1a0012efd6" />
+<img width="1130" height="615" alt="Screenshot 2025-09-06 at 9 58 54 PM" src="https://github.com/user-attachments/assets/88bf57de-4026-4801-a69b-435f59b3ace6" />
+<img width="1130" height="617" alt="Screenshot 2025-09-06 at 9 59 30 PM" src="https://github.com/user-attachments/assets/53ff4f9a-3a1e-455f-8203-a7b55dd8fd17" />
+<img width="1130" height="617" alt="Screenshot 2025-09-06 at 10 00 38 PM" src="https://github.com/user-attachments/assets/156df45c-1559-4fa2-bc13-9d35bf88dbc2" />
 
 
