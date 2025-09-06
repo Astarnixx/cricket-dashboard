@@ -2,3 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --gradient-cool: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.15);
+    --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
+    
+    --border-radius-modern: 16px;
+    --border-radius-card: 20px;
+    --border-radius-button: 12px;
+  }
+  
+  .dark {
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.4);
+    --shadow-strong: 0 15px 50px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.4);
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border border-white/20 dark:border-gray-700/30;
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white/90 dark:hover:bg-gray-800/90;
+  }
+  
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-cool {
+    background: var(--gradient-cool);
+  }
+  
+  .gradient-dark {
+    background: var(--gradient-dark);
+  }
+  
+  .modern-shadow {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .modern-shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .modern-shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .modern-border-radius {
+    border-radius: var(--border-radius-modern);
+  }
+  
+  .modern-border-radius-card {
+    border-radius: var(--border-radius-card);
+  }
+  
+  .modern-border-radius-button {
+    border-radius: var(--border-radius-button);
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-warm {
+    @apply bg-gradient-to-r from-pink-500 to-orange-500 dark:from-pink-400 dark:to-orange-400 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-cool {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-400 dark:to-blue-400 bg-clip-text text-transparent;
+  }
+  
+  .modern-button {
+    @apply px-6 py-3 font-semibold text-white transition-all duration-300 transform hover:scale-105 active:scale-95;
+    border-radius: var(--border-radius-button);
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .modern-button:hover {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .floating-card {
+    @apply glass-card-hover modern-border-radius-card;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from { box-shadow: var(--shadow-soft); }
+    to { box-shadow: var(--shadow-glow); }
+  }
+  
+  .modern-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(102, 126, 234, 0.3) transparent;
+  }
+  
+  .modern-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .modern-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .modern-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(102, 126, 234, 0.3);
+    border-radius: 3px;
+  }
+  
+  .modern-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(102, 126, 234, 0.5);
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-modern {
+    backdrop-filter: blur(20px);
+  }
+  
+  .text-shadow-soft {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-strong {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+

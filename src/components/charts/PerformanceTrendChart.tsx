@@ -52,7 +52,23 @@ export default function PerformanceTrendChart({
     }));
   }, [matches]);
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload, label }: {
+    active?: boolean;
+    payload?: Array<{
+      name: string;
+      value: number;
+      color: string;
+      payload: {
+        opponent: string;
+        date: string;
+        runs: number;
+        wickets: number;
+        battingRunningAverage: number;
+        bowlingRunningAverage: number;
+      };
+    }>;
+    label?: string;
+  }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (
@@ -67,7 +83,7 @@ export default function PerformanceTrendChart({
           <p className="text-xs text-gray-600 dark:text-gray-400">vs {data.opponent}</p>
           <p className="text-xs text-gray-600 dark:text-gray-400">{data.date}</p>
           <div className="mt-2 space-y-1">
-            {payload.map((entry: any, index: number) => (
+            {payload.map((entry, index: number) => (
               <motion.p 
                 key={index} 
                 initial={{ opacity: 0, x: -10 }}

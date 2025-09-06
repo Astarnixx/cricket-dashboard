@@ -58,7 +58,7 @@ export default function CareerProgressionChart({ performance }: CareerProgressio
     let cumulativeRuns = 0;
     let cumulativeWickets = 0;
     
-    chartData.forEach((data, index) => {
+    chartData.forEach((data) => {
       cumulativeRuns += data.runs;
       cumulativeWickets += data.wickets;
       
@@ -100,7 +100,23 @@ export default function CareerProgressionChart({ performance }: CareerProgressio
     return milestones;
   }, [chartData]);
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload, label }: {
+    active?: boolean;
+    payload?: Array<{
+      payload: {
+        year: number;
+        runs: number;
+        wickets: number;
+        matches: number;
+        cumulativeRuns: number;
+        cumulativeWickets: number;
+        cumulativeMatches: number;
+        battingAvg: number;
+        bowlingAvg: number;
+      };
+    }>;
+    label?: string;
+  }) => {
     if (active && payload && payload.length) {
       const data = payload[0].payload;
       return (

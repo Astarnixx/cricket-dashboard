@@ -111,7 +111,7 @@ export default function ComparisonBarChart({ className }: ComparisonBarChartProp
     });
 
     return data;
-  }, [selectedPlayers]);
+  }, [selectedPlayers, availableStats]);
 
   // Prepare radar chart data
   const radarChartData = useMemo(() => {
@@ -164,14 +164,14 @@ export default function ComparisonBarChart({ className }: ComparisonBarChartProp
     });
 
     return data;
-  }, [selectedPlayers]);
+  }, [selectedPlayers, availableStats]);
 
   // Filtered chart data based on selected stat
   const filteredBarChartData = useMemo(() => {
     if (multiStatMode) return barChartData;
     const selectedStatLabel = availableStats.find(s => s.key === selectedStat)?.label;
     return barChartData.filter(d => d.stat === selectedStatLabel);
-  }, [barChartData, selectedStat, multiStatMode]);
+  }, [barChartData, selectedStat, multiStatMode, availableStats]);
 
   // Add player to comparison
   const addPlayer = (playerId: string) => {
@@ -197,7 +197,15 @@ export default function ComparisonBarChart({ className }: ComparisonBarChartProp
     '#8b5cf6'  // Purple
   ];
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload, label }: {
+    active?: boolean;
+    payload?: Array<{
+      name: string;
+      value: number;
+      color: string;
+    }>;
+    label?: string;
+  }) => {
     if (active && payload && payload.length) {
       return (
         <motion.div 
@@ -209,7 +217,7 @@ export default function ComparisonBarChart({ className }: ComparisonBarChartProp
         >
           <p className="font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 text-sm">{label}</p>
           <div className="space-y-1 sm:space-y-2">
-            {payload.map((entry: any, index: number) => (
+            {payload.map((entry, index: number) => (
               <motion.div 
                 key={index} 
                 initial={{ opacity: 0, x: -10 }}

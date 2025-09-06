@@ -56,7 +56,14 @@ export const getPerformanceByFormat = (matches: MatchPerformance[]) => {
 
 // Get performance by venue
 export const getPerformanceByVenue = (performance: PlayerPerformance) => {
-  return performance.venuePerformance.map((venue: any) => ({
+  return performance.venuePerformance.map((venue: {
+    venue: string;
+    matches: number;
+    runs: number;
+    wickets: number;
+    avgRuns: number;
+    avgWickets: number;
+  }) => ({
     venue: venue.venue,
     matches: venue.matches,
     runs: venue.runs,
@@ -68,7 +75,14 @@ export const getPerformanceByVenue = (performance: PlayerPerformance) => {
 
 // Get performance by opponent
 export const getPerformanceByOpponent = (performance: PlayerPerformance) => {
-  return performance.opponentPerformance.map((opponent: any) => ({
+  return performance.opponentPerformance.map((opponent: {
+    opponent: string;
+    matches: number;
+    runs: number;
+    wickets: number;
+    avgRuns: number;
+    avgWickets: number;
+  }) => ({
     opponent: opponent.opponent,
     matches: opponent.matches,
     runs: opponent.runs,

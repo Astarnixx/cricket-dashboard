@@ -3,7 +3,7 @@
 import React, { useState, useMemo } from 'react';
 import { Input } from '@/components/ui/input';
 import { players, Player } from '@/data/players';
-import { LoadingSpinner, PlayerListSkeleton } from './LoadingSpinner';
+import { LoadingSpinner } from './LoadingSpinner';
 import { ErrorFallback } from './ErrorFallback';
 
 // Props interface
@@ -37,8 +37,8 @@ export default function PlayerSearch({ onSelectPlayer }: PlayerSearchProps) {
       }
       
       setShowResults(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Search failed');
+    } catch {
+      setError('Search failed');
       setShowResults(false);
     } finally {
       setIsLoading(false);
@@ -53,7 +53,7 @@ export default function PlayerSearch({ onSelectPlayer }: PlayerSearchProps) {
       return players.filter(player =>
         player.name.toLowerCase().includes(query.toLowerCase())
       );
-    } catch (err) {
+    } catch {
       setError('Failed to filter players');
       return [];
     }
@@ -109,7 +109,7 @@ export default function PlayerSearch({ onSelectPlayer }: PlayerSearchProps) {
         <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg z-50 max-h-60 overflow-auto">
           {filteredPlayers.length === 0 ? (
             <div className="p-4 text-center text-gray-500 dark:text-gray-400">
-              No players found matching "{query}"
+              No players found matching &ldquo;{query}&rdquo;
             </div>
           ) : (
             filteredPlayers.map(player => (
