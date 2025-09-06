@@ -56,3 +56,14 @@ src/
 
 Deployed on Vercel: https://cricket-dashboard-sigma.vercel.app/
 
+<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/ef76fb0c-3dee-4d9e-825f-a32296c3a118" />
+<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/9ae9a241-e41f-437b-a2d9-fc8ead97f7e5" />
+<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/315cabb9-48be-4ab8-acb3-a77e214d90a1" />
+<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/af406faa-7315-4952-adf0-7006122a56d4" />
+<img width="1604" height="967" alt="image" src="https://github.com/user-attachments/assets/b8200c52-e341-421d-b968-d8b93c275d36" />
+
+
+
+
+
+
